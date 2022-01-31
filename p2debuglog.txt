@@ -1,0 +1,82 @@
+(gdb) b main
+Breakpoint 1 at 0x823: file p2original.c, line 34.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p2original.c:34
+34    printf("Start Of The Program:\n");
+(gdb) n
+Start Of The Program:
+36    a = input();
+(gdb) s
+input () at p2original.c:3
+3   {
+(gdb) n
+5     printf("Enter a number: ");
+(gdb) n
+6     scanf("%d",&a);
+(gdb) n
+Enter a number: 4
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p2original.c:37
+37    b = input();
+(gdb) s
+input () at p2original.c:3
+3   {
+(gdb) n
+5     printf("Enter a number: ");
+(gdb) n
+6     scanf("%d",&a);
+(gdb) n
+Enter a number: 7
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p2original.c:38
+38    c = input();
+(gdb) s
+input () at p2original.c:3
+3   {
+(gdb) n
+5     printf("Enter a number: ");
+(gdb) n
+6     scanf("%d",&a);
+(gdb) n
+Enter a number: 11
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p2original.c:39
+39    l = cmp(a, b, c);
+(gdb) s
+cmp (a=4, b=7, c=11) at p2original.c:12
+12    if((a>b)&&(a>c))
+(gdb) n
+16    else if(b>c)
+(gdb) n
+22      return c;
+(gdb) n
+24  }
+(gdb) n
+main () at p2original.c:40
+40    output(l);
+(gdb) s
+output (l=11) at p2original.c:29
+29    printf("The largest number in the given input is: %d", l);
+(gdb) n
+30  }
+(gdb) n
+main () at p2original.c:41
+41    printf("\nEnd Of Program: ");
+(gdb) n
+The largest number in the given input is: 11
+42    return 0;
+(gdb) c
+Continuing.
+End Of Program: [Inferior 1 (process 443) exited normally]

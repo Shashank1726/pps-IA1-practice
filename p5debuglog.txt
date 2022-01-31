@@ -1,0 +1,87 @@
+(gdb) b main
+Breakpoint 1 at 0x81d: file p5original.c, line 31.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5original.c:31
+31    n = input();
+(gdb) s
+input () at p5original.c:4
+4   {
+(gdb) n
+6     printf("Enter a number to find the sqaure root of: ");
+(gdb) n
+7     scanf("%f", &n);
+(gdb) n
+Enter a number to find the sqaure root of: 36
+8     return n;
+(gdb) n
+9   }
+(gdb) n
+main () at p5original.c:32
+32    sres = squareroot(n);
+(gdb) s
+squareroot (n=36) at p5original.c:13
+13    float x = n;
+(gdb) n
+14    float y = 1;
+(gdb) n
+15    float e = 0.000001;
+(gdb) n
+16    while (x - y > e)
+(gdb) n
+18      x  = (x + y) / 2;
+(gdb) n
+19      y = n / x; 
+(gdb) n
+16    while (x - y > e)
+(gdb) n
+18      x  = (x + y) / 2;
+(gdb) n
+19      y = n / x; 
+(gdb) n
+16    while (x - y > e)
+(gdb) n
+18      x  = (x + y) / 2;
+(gdb) n
+19      y = n / x; 
+(gdb) n
+16    while (x - y > e)
+(gdb) n
+18      x  = (x + y) / 2;
+(gdb) n
+19      y = n / x; 
+(gdb) n
+16    while (x - y > e)
+(gdb) n
+18      x  = (x + y) / 2;
+(gdb) n
+19      y = n / x; 
+(gdb) n
+16    while (x - y > e)
+(gdb) n
+18      x  = (x + y) / 2;
+(gdb) n
+19      y = n / x; 
+(gdb) 
+16    while (x - y > e)
+(gdb) n
+21    return x;
+(gdb) n
+22  }
+(gdb) n
+main () at p5original.c:33
+33    output(n, sres);
+(gdb) s
+output (n=36, sres=6) at p5original.c:25
+25    printf("Square root of given input %0.2f is = %0.2f \n", n, sres);
+(gdb) n
+Square root of given input 36.00 is = 6.00 
+26  }
+(gdb) n
+main () at p5original.c:34
+34    return 0;
+(gdb) c
+Continuing.
+End of Program:[Inferior 1 (process 631) exited normally]
